@@ -1,0 +1,119 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-image: url(money.jpeg);
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  width: 34%;
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.notification {
+  position: relative;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  z-index: 99999;
+  display: flex;
+}
+
+.success {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.error {
+  background-color: #f44336;
+  color: #fff;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 100px;
+
+}
+
+body {
+  background-image: url(money.jpeg);
+  background-size: cover;
+}
+
+.overlay1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 128, 0, 0.4);
+  z-index: -1;
+}
+
+header,
+form {
+  background-color: white;
+  padding: 30px;
+
+}
+
+@media screen and (max-width: 1200px) {
+  form {
+      width: 50%;
+  }
+
+  header {
+      margin-bottom: 30px;
+  }
+
+  main {
+      flex-direction: column;
+      padding: 20px;
+  }
+}
