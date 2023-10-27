@@ -21,8 +21,11 @@ const tentar = () => {
 
   try { // tenta executar algo
     checar(idade)
+    return 'Entrada Permitida'
   } catch (erro) { // captura o erro
     return erro.message;
+  } finally { // opcional - sempre executa esse bloco idependente do que acontecer na relação tryXcatch
+
   }
 }
 
