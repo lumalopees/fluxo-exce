@@ -10,7 +10,7 @@ window.onload = () => {
         throw new Error('Necessita de 6 dígitos a conta, por favor verificar')
       } 
     } catch (error) {
-      
+      alert(erro.message)
     }
   })
 }
