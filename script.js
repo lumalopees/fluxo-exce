@@ -23,7 +23,13 @@ const balancheChange = () => {
 }
 
 const showNotification = () => {
-  
+  popUpNotification = document.createElement('div')
+  popUpNotification.classList.add('overlay');
+
+  const notification = document.createElement('div');
+  notification.classList.add('notification');
+
+  const textMessage = document.createElement('p');
 }
 
 window.onload = () => {
