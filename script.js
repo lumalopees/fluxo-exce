@@ -10,7 +10,16 @@ const balanceCheck = () => {
   const amountValue = document.querySelector('#amount').value;
   const saldoValue = Number(document.querySelector('#saldo').innerText);
 
+  if (amountValue > saldoValue) {
+    throw new Error('Valor maior que o saldo')
+  }
+}
 
+const balancheChange = () => {
+  const amountValue = document.querySelector('#amount').value;
+  const saldo = document.querySelector('#saldo').innerText;
+
+  saldo.innerText = +saldo.innerText - amountValue;
 }
 
 window.onload = () => {
@@ -18,11 +27,14 @@ window.onload = () => {
 
   formAccount.addEventListener('submit', (event) => {
     event.preventDefault();
-
+ 
     try {
       accountCheck();
+      balanceCheck(); 
     } catch (error) {
       alert(erro.message)
+    } finally {
+
     }
   })
 }
