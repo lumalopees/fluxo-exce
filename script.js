@@ -22,12 +22,12 @@ const balancheChange = () => {
   saldo.innerText = +saldo.innerText - amountValue;
 }
 
-const showNotification = (message) => {
+const showNotification = (message, typeMessage) => {
   popUpNotification = document.createElement('div')
   popUpNotification.classList.add('overlay');
 
   const notification = document.createElement('div');
-  notification.classList.add('notification');
+  notification.classList.add('notification', typeMessage);
 
   popUpNotification.appendChild(notification);
 
@@ -36,6 +36,10 @@ const showNotification = (message) => {
 
   const buttonNotification = document.createElement('button');
   buttonNotification.innerText = 'Ok';
+
+  buttonNotification.addEventListener('click', () => {
+    popUpNotification.remove();
+  })
 
   notification.appendChild(textMessage);
   notification.appendChild(buttonNotification);
@@ -53,11 +57,11 @@ window.onload = () => {
       accountCheck();
       balanceCheck(); 
       balancheChange();
-      alert('Transação finalizada com sucesso!')
+      showNotification('Transação finalizada com sucesso!', 'sucess')
     } catch (error) {
-      alert(erro.message)
+      showNotification(erro.message, 'error')
     } finally {
-      alert('Operação finalizada!')
+      showNotification('Operação finalizada!')
     }
   })
 }
