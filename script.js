@@ -22,6 +22,10 @@ const balancheChange = () => {
   saldo.innerText = +saldo.innerText - amountValue;
 }
 
+const showNotification = () => {
+  
+}
+
 window.onload = () => {
   const formAccount = document.querySelector('#transactionForm')
 
@@ -35,6 +39,8 @@ window.onload = () => {
       alert('Transação finalizada com sucesso!')
     } catch (error) {
       alert(erro.message)
-    } 
+    } finally {
+      alert('Operação finalizada!')
+    }
   })
 }
