@@ -22,14 +22,25 @@ const balancheChange = () => {
   saldo.innerText = +saldo.innerText - amountValue;
 }
 
-const showNotification = () => {
+const showNotification = (message) => {
   popUpNotification = document.createElement('div')
   popUpNotification.classList.add('overlay');
 
   const notification = document.createElement('div');
   notification.classList.add('notification');
 
+  popUpNotification.appendChild(notification);
+
   const textMessage = document.createElement('p');
+  textMessage.innerText = message;
+
+  const buttonNotification = document.createElement('button');
+  buttonNotification.innerText = 'Ok';
+
+  notification.appendChild(textMessage);
+  notification.appendChild(buttonNotification);
+
+  document.body.appendChild(popUpNotification);
 }
 
 window.onload = () => {
