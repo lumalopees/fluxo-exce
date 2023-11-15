@@ -17,7 +17,7 @@ const balanceCheck = () => {
 
 const balancheChange = () => {
   const amountValue = document.querySelector('#amount').value;
-  const saldo = document.querySelector('#saldo').innerText;
+  const saldo = document.querySelector('#saldo');
 
   saldo.innerText = +saldo.innerText - amountValue;
 }
@@ -31,10 +31,10 @@ window.onload = () => {
     try {
       accountCheck();
       balanceCheck(); 
+      balancheChange();
+      alert('Transação finalizada com sucesso!')
     } catch (error) {
       alert(erro.message)
-    } finally {
-
-    }
+    } 
   })
 }
